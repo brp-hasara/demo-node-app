@@ -43,7 +43,7 @@ pipeline {
                     sudo docker pull ${DOCKER_HUB_REPO}:${env.BUILD_ID}
                     sudo docker stop ${APP_NAME} || true
                     sudo docker rm ${APP_NAME} || true
-                    sudo docker run -d --name ${APP_NAME} -p 5000:8081 ${DOCKER_HUB_REPO}:${env.BUILD_ID}
+                    sudo docker run -d --name ${APP_NAME} -p 8081:5000 ${DOCKER_HUB_REPO}:${env.BUILD_ID}
                     '
                     """
                 }
